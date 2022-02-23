@@ -248,13 +248,13 @@ CREATE OR REPLACE FUNCTION create_prescription(
 --- Using the function 
 --Creating what is needed 
 INSERT INTO persons(CPR, first_name,last_name,gender,phone, email) 
-VALUES (010100001, 'John', 'Patient Doe', 'male', 123456789, 'something@something.com') 
+VALUES ('010100001', 'John', 'Patient Doe', 'male', 123456789, 'something@something.com') 
 INSERT INTO persons(CPR, first_name,last_name,gender,phone, email) 
-VALUES (020200001, 'John', 'Doctor Doe', 'male', 123456799, 'somethingdoctor@something.com')
+VALUES ('020200001', 'John', 'Doctor Doe', 'male', 123456799, 'somethingdoctor@something.com')
 INSERT INTO doctors (CPR,occupation) 
-VALUES (020200001, 'mystery department')
+VALUES ('020200001', 'mystery department')
 INSERT INTO patients  (CPR,description) 
-VALUES (010100001, 'Special description about whatever')
+VALUES ('010100001', 'Special description about whatever')
 -- Displaying it 
 SELECT * FROM persons 
 SELECT * FROM doctors 
