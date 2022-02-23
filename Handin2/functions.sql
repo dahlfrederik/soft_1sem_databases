@@ -193,7 +193,7 @@ BEGIN
 		) AS n; 
 	-- generate phone number and email -- consider changing where you get phone number from, as it is not danish
 	SELECT INTO phone, email 
-		contact.phone, contact.email FROM (
+		substring(contact.phone,0,8), contact.email FROM (
 			SELECT names.phone, names.email FROM names ORDER BY random() LIMIT 1
 		) AS contact;
 	-- generate random gender 
