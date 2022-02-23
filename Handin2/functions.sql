@@ -138,7 +138,7 @@ $$
 DECLARE
 	res TEXT;
 BEGIN 
-	SELECT format_birthdate(birthday) || '-' || generate_last_digits(gender) INTO res;
+	SELECT format_birthdate(birthday) || generate_last_digits(gender) INTO res;
 	RETURN res;
 END;
 $$;
