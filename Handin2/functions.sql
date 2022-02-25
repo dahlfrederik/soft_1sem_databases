@@ -262,3 +262,8 @@ SELECT * FROM patients
 -- Calling the function 
 SELECT create_prescription('10100001', '20200001', 'Fever', 'Panodil', 4, '2022-02-23 14:01:10-08')
 SELECT * FROM prescription 
+
+
+
+
+
