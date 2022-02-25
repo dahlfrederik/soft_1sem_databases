@@ -81,6 +81,7 @@ BEGIN
 END;
 $$;
 
+
 CREATE OR REPLACE FUNCTION generate_birthdate(age int)
 	RETURNS date
 	LANGUAGE plpgsql
@@ -88,10 +89,12 @@ CREATE OR REPLACE FUNCTION generate_birthdate(age int)
   AS 
 $$
 DECLARE
+	currentyear int;
 	birthyear int;
 	res timestamp;
 BEGIN
-	SELECT 2022-age INTO birthyear;
+	SELECT date_part('year', now()) INTO currentyear;
+	SELECT currentyear-age INTO birthyear;
 	WITH base AS 
 	(
 		SELECT 
@@ -226,6 +229,54 @@ BEGIN
 		RETURN NEXT; -- RETURN NEXT adds it TO the RETURN TABLE AND continues the loop
 	END LOOP;
 END; 
+$$;
+
+CREATE OR REPLACE FUNCTION set_doctor(cpr TEXT)
+	RETURNS VOID 
+	LANGUAGE plpgsql 
+	VOLATILE 
+AS 
+$$ 
+BEGIN 
+	INSERT INTO doctors (cpr, occupation) VALUES (cpr, 'tempocc');
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION set_patient(cpr TEXT)
+	RETURNS VOID 
+	LANGUAGE plpgsql 
+	VOLATILE 
+AS 
+$$ 
+BEGIN 
+	INSERT INTO patients  (cpr, description) VALUES (cpr, 'This is a temp desc.');
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION set_doctor_or_patient()
+	RETURNS VOID
+	LANGUAGE plpgsql
+	VOLATILE 
+AS
+$$
+DECLARE 
+	arow record;
+	rand int;
+BEGIN 
+	FOR arow IN 
+		SELECT cpr FROM persons
+	LOOP
+		SELECT floor(2 * RANDOM()) INTO rand;
+		IF (rand = 0) THEN
+			PERFORM set_patient (arow.cpr);
+		ELSIF (rand = 1) THEN 
+			PERFORM set_doctor (arow.cpr);
+		ELSE 
+			PERFORM set_patient (arow.cpr);
+			PERFORM set_doctor (arow.cpr);
+		END IF;
+	END LOOP;
+END;
 $$;
 
 -- Function to insert prescription 
