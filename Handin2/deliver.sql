@@ -43,3 +43,14 @@ SELECT deliverPrescription('010100001', 'Panodil', 'PharmacyHerlev');
 SELECT * FROM prescription p  ;
 
 
+CREATE FUNCTION sendEmail(cpr varchar)
+RETURNS VOID
+AS $$
+import subprocess
+subprocess.call(['/usr/bin/python', '/home/python/sendEmail.py ' || cpr])
+$$ LANGUAGE plpythonu;
+
+CREATE TRIGGER executePython 
+AFTER INSERT ON messages 
+FOR EACH ROW EXECUTE PROCEDURE callMyApp();
+
