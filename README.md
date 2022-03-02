@@ -1,22 +1,18 @@
-# Databases for developers
+#Databases for developers
 
-### Group members: 
+###Group members: 
+<a href = "https://github.com/dahlfrederik/soft_1sem_databases/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=dahlfrederik/soft_1sem_databases"/>
+</a>
+
 Click for a link to their github: 
 
 [@josefmarcc ](https://github.com/josefmarcc)
-
 [@fdinsen](https://github.com/fdinsen)
-
 [@sebastianbentley ](https://github.com/SebastianBentley)
-
 [@dahlfrederik ](https://github.com/dahlfrederik)
 
-<a href = "https://github.com/dahlfrederik/soft_1sem_databases/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo = dahlfrederik/soft_1sem_databases"/>
-</a>
-
-
-
+###Description
 This repository is used for the handins in the course _databases for developers_ during the first semester of the bachelor in Software Development on CPH business in Lyngby. 
 The repository contains folders for each handin and will be updated throughout the semester. 
 
@@ -25,10 +21,10 @@ The repository contains folders for each handin and will be updated throughout t
 ##Handin 1 
 Contains all material regarding the responses to the first handin in PDF format. The PDF contains graphs and visualizations of our solution. 
 
-## Handin 2
+##Handin 2
 Contains all materials to create a database with a local enviroment to test our solution to the problem given in the exercise description. 
 
-### Setup to run the program
+###Setup to run the program
 To run the program do the following steps
 
 To follow these steps we assume that you already have created a postgres database using a docker-image (if not, click this [link](https://hub.docker.com/_/postgres)), have a connection to it and that you have a favorite database visualizer tool (we recommend DBeaver). 
