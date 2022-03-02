@@ -76,6 +76,6 @@ To follow these steps we assume that you already have created a postgres databas
 	
 		`python3 sendEmail.py`
 	
-4. Create a cronjob to run the script on a daily or your prefered timeframe basis. (See this [link](https://phoenixnap.com/kb/set-up-cron-job-linux )) for inspiration. 
+4. Create a cronjob to run the script on a daily basis or your prefered timeframe. (See this [link](https://phoenixnap.com/kb/set-up-cron-job-linux )) for inspiration. 
 	
 
