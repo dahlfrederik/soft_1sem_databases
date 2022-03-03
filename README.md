@@ -5,7 +5,7 @@
   <img src = "https://contrib.rocks/image?repo=dahlfrederik/soft_1sem_databases"/>
 </a>
 
-** credits for image in bottom. 
+**
 
 
 Click for a link to their github: 
