@@ -5,12 +5,17 @@
   <img src = "https://contrib.rocks/image?repo=dahlfrederik/soft_1sem_databases"/>
 </a>
 
+** credits for image in bottom. 
+
+
 Click for a link to their github: 
 
 [@josefmarcc ](https://github.com/josefmarcc)
 [@fdinsen](https://github.com/fdinsen)
 [@sebastianbentley ](https://github.com/SebastianBentley)
 [@dahlfrederik ](https://github.com/dahlfrederik)
+
+
 
 ### Description
 This repository is used for the handins in the course _databases for developers_ during the first semester of the bachelor in Software Development on CPH business in Lyngby. 
@@ -79,3 +84,5 @@ To follow these steps we assume that you already have created a postgres databas
 4. Create a cronjob to run the script on a daily basis or your prefered timeframe. (See this [link](https://phoenixnap.com/kb/set-up-cron-job-linux )) for inspiration. 
 	
 
+
+** Made with [contributors-img](https://contrib.rocks).
