@@ -18,4 +18,4 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.listen(apiPort, () => console.log("Server running on port ${apiPort}"))
+app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

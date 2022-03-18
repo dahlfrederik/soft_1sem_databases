@@ -1,4 +1,6 @@
-import MoviesList from './MoviesList'
-import MoviesInsert from './MoviesInsert'
+import TweetInsert from './TweetInsert'
+import TwitterList from './TwitterList'
+import Home from './Home'
 
-export { MoviesList, MoviesInsert }
+
+export { TwitterList, TweetInsert, Home }

@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { NavBar } from '../components'
-import { MoviesList, MoviesInsert} from '../pages'
+import { TwitterList, TweetInsert, Home} from '../pages'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -12,8 +12,9 @@ function App() {
             <NavBar />
             <Routes>
 
-                <Route path="/movies/list" exact element={<MoviesList/>} />
-                <Route path="/movies/create" exact element={<MoviesInsert/>} />
+                <Route path="/twitter/list" exact element={<TwitterList/>} />
+                <Route path="/twitter/create" exact element={<TweetInsert/>} />
+                <Route path="/" exact element={<Home/>} />
               
             </Routes>
         </Router>

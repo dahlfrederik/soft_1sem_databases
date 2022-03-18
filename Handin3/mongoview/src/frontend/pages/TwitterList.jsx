@@ -10,11 +10,11 @@ const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
 `
 
-class MoviesList extends Component {
+class TwitterList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movies: [],
+            tweets: [],
             columns: [],
             isLoading: false,
         }
@@ -23,19 +23,18 @@ class MoviesList extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true })
 
-        await api.getAllMovies().then(movies => {
+        await api.getAllTweets().then(tweets => {
             this.setState({
-                movies: movies.data.data,
+                tweets: tweets.data.data,
                 isLoading: false,
-                
             })
            
         })
     }
 
     render() {
-        const { movies, isLoading } = this.state
-        console.log('TCL: MoviesList -> render -> movies', movies)
+        const { tweets, isLoading } = this.state
+        console.log('TCL: TweetsList -> render -> tweets', tweets)
 
         const columns = [
             {
@@ -44,15 +43,26 @@ class MoviesList extends Component {
                 filterable: true,
             },
             {
-                Header: 'Title',
-                accessor: 'title',
+                Header: 'Text',
+                accessor: 'text',
                 filterable: true,
             },
+            {
+                Header: 'User',
+                accessor: 'user.name',
+                filterable: true,
+            },
+            {
+                Header: 'Retweets',
+                accessor: 'retweet_count',
+                filterable: true,
+            },
+           
            
         ]
 
         let showTable = true
-        if (!movies.length) {
+        if (!tweets.length) {
             showTable = false
         }
 
@@ -60,7 +70,7 @@ class MoviesList extends Component {
             <Wrapper>
                 {showTable && (
                     <ReactTable
-                        data={movies}
+                        data={tweets}
                         columns={columns}
                         loading={isLoading}
                         defaultPageSize={10}
@@ -73,4 +83,4 @@ class MoviesList extends Component {
     }
 }
 
-export default MoviesList
+export default TwitterList

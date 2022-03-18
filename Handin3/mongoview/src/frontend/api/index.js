@@ -4,13 +4,13 @@ const api = axios.create({
     baseURL: 'http://localhost:3001/api',
 })
 
-export const insertMovie = payload => api.post(`/movie`, payload)
-export const getAllMovies = () => api.get(`/movies`)
+export const insertTweet = payload => api.post(`/tweet`, payload)
+export const getAllTweets = () => api.get(`/tweets`)
 
 
 const apis = {
-    insertMovie,
-    getAllMovies
+    insertTweet,
+    getAllTweets
 }
 
 export default apis

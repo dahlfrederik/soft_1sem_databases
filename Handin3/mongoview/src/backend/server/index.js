@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 
 const db = require('../dbconfig/')
-const movieRouter = require('../routes/movie-router')
+const twitterRouter = require('../routes/twitter-router')
 
 const app = express()
 const apiPort = 3001
@@ -19,6 +19,6 @@ app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
-app.use('/api', movieRouter)
+app.use('/api', twitterRouter)
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
