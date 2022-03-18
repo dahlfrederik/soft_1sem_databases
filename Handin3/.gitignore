@@ -1,0 +1,9 @@
+.env
+node_modules
+build
+src/utils/makeTestFriends.ts
+src/utils/makeTestPositions.ts
+# ignore all logs files
+logs/*
+# don't ignore keep files
+!.keep 
