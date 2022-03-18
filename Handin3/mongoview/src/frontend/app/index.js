@@ -11,8 +11,9 @@ function App() {
         <Router>
             <NavBar />
             <Routes>
-                <Route path="/movies/list" exact component={MoviesList} />
-                <Route path="/movies/create" exact component={MoviesInsert} />
+
+                <Route path="/movies/list" exact element={<MoviesList/>} />
+                <Route path="/movies/create" exact element={<MoviesInsert/>} />
               
             </Routes>
         </Router>

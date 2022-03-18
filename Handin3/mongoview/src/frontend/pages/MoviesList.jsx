@@ -9,7 +9,7 @@ import 'react-table-6/react-table.css'
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
 `
-console.log("lol")
+
 class MoviesList extends Component {
     constructor(props) {
         super(props)
@@ -28,7 +28,7 @@ class MoviesList extends Component {
                 movies: movies.data.data,
                 isLoading: false,
                 
-            }, console.log(movies))
+            })
            
         })
     }
@@ -44,20 +44,11 @@ class MoviesList extends Component {
                 filterable: true,
             },
             {
-                Header: 'Name',
-                accessor: 'name',
+                Header: 'Title',
+                accessor: 'title',
                 filterable: true,
             },
-            {
-                Header: 'Rating',
-                accessor: 'rating',
-                filterable: true,
-            },
-            {
-                Header: 'Time',
-                accessor: 'time',
-                Cell: props => <span>{props.value.join(' / ')}</span>,
-            },
+           
         ]
 
         let showTable = true
