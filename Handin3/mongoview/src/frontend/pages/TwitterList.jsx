@@ -38,27 +38,15 @@ class TwitterList extends Component {
 
         const columns = [
             {
-                Header: 'ID',
+                Header: 'User',
                 accessor: '_id',
                 filterable: true,
             },
             {
-                Header: 'Text',
-                accessor: 'text',
-                filterable: true,
-            },
-            {
-                Header: 'User',
-                accessor: 'user.name',
-                filterable: true,
-            },
-            {
                 Header: 'Retweets',
-                accessor: 'retweet_count',
+                accessor: 'retweetcount',
                 filterable: true,
             },
-           
-           
         ]
 
         let showTable = true
