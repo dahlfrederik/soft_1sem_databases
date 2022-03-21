@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/tweet", TwitterCtrl.createTweet);
 //router.get("/tweets", TwitterCtrl.getTweets);
-router.get("/tweets", TwitterCtrl.getMostRetweeted);
+router.get("/tweets", TwitterCtrl.getTopTenHastags);
 router.get("/tweetsmost", TwitterCtrl.getMostRetweeted);
 
 module.exports = router;

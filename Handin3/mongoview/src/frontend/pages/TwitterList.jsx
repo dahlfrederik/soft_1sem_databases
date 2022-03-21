@@ -43,8 +43,8 @@ class TwitterList extends Component {
                 filterable: true,
             },
             {
-                Header: 'Retweets',
-                accessor: 'retweetcount',
+                Header: 'Hastag count',
+                accessor: 'count',
                 filterable: true,
             },
         ]

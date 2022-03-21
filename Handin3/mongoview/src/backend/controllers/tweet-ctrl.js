@@ -81,8 +81,33 @@ async function mostRetweeted() {
   return mostRetweets;
 }
 
+const getTopTenHastags = async (req, res) => {
+  const tags = await getTopTenTagsPipeline();
+  return res.status(200).json({ data: tags });
+};
+
+async function getTopTenTagsPipeline() {
+  const pipeline = [
+    { $match: { lang: { $in: ["en"] } } },
+    { $project: { "entities.hashtags": 1, _id: 0 } },
+    { $unwind: "$entities.hashtags" },
+    { $group: { _id: "$entities.hashtags.text", count: { $sum: 1 } } },
+    { $sort: { count: -1 } },
+    { $limit: 10 },
+  ];
+
+  const aggCursor = await Tweet.aggregate(pipeline);
+  let topTenTags = [];
+
+  aggCursor.forEach((tag) => {
+    topTenTags.push(tag);
+  });
+  return topTenTags;
+}
+
 module.exports = {
   createTweet,
   getTweets,
   getMostRetweeted,
+  getTopTenHastags,
 };
