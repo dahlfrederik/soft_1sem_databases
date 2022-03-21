@@ -24,7 +24,14 @@ class Home extends Component {
         return (
             <Wrapper>
                 <Title>List top 10 tweets, or save your own to the database!</Title>
-                <Text>Handin 3, studienumre??</Text>
+                <br/>
+                <h1>HANDIN 3</h1>
+                <h3>Gruppe medlemmer </h3>
+                    <p>Josef Marc | jp-325</p>
+                    <p>Sebastian Bentley | sb-287</p>
+                    <p> Frederik Dinsen | fd-77</p>
+                    <p> Frederik Dahl | fd-76 </p>
+ 
              
             </Wrapper>
         )
