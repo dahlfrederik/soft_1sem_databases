@@ -1,7 +1,5 @@
 # DATABASE HANDIN HBase
 
-### Exercise description
-
 ### Readme 
 
 1. Go to the official HBase docker github following this [link](https://github.com/big-data-europe/docker-hbase) and clone the repository. We named the folder `docker-hbase`. Make sure that you have a docker installation. 
