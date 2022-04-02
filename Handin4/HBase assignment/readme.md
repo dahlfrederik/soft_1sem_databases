@@ -6,7 +6,7 @@
 2. Go to the cloned folder and open the `docker-compose-distributed-local.yml` file in your favorite texteditor. In the file scroll down to the hbase-master block and change the ports to: 
 	`- 16010:9090`
 Make sure that you save your changes. 
-3. In the cloned folder go to the folder claled hmaster and open the file called: `Dockerfile` in your texteditor. Make sure your expose part looks like this. `EXPOSE 9090 16000 16010`. Save it and close the texteditor. 
+3. In the cloned folder go to the folder claled hmaster and open the file called: `Dockerfile` in your texteditor. Make sure your expose part looks like this. `EXPOSE 9090 16010`. Save it and close the texteditor. 
 4. Open a CLI window in the main folder `docker-hbase` and run the following docker command: 
 `docker-compose -f docker-compose-distributed-local.yml up -d`
 5. Open a CLI window using the docker UI in the hbase-master docker environment. 
