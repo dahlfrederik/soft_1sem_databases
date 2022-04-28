@@ -39,3 +39,5 @@ $$
 LANGUAGE 'plpgsql';
  
 SELECT deliverPrescription('010100001', 'Panodil', 'PharmacyHerlev');
+
+CREATE UNIQUE INDEX cpr_idx ON persons(cpr);
